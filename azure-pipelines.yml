@@ -49,7 +49,7 @@ stages:
         repository: 'riaoct30/tomcat-test'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: '${tag}'
+        tags: '$(tag)'
       retryCountOnTaskFailure: '1'
 
    
