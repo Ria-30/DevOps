@@ -28,7 +28,7 @@ stages:
        
     - script: |
         sudo systemctl daemon-reload
-        sudo systemctl start docker
+        sudo systemctl restart docker
         sudo chmod 666 /var/run/docker.sock
        
     - script: |
