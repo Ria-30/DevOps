@@ -3,10 +3,8 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-  branches:
-    include:
-     - feature
-     - main
+  - feature
+  - main
 
 variables:
   tag: '$(Build.BuildId)'
@@ -24,7 +22,11 @@ stages:
         sudo apt-get update && sudo apt-get install -y maven
         mvn clean install
       displayName: 'Maven build'
-
+    - task: DockerInstaller@0
+      inputs:
+       dockerVersion: '26.0.2'
+       
+       
     - script: |
         docker login
       displayName: Docker Login
