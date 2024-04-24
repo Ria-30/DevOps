@@ -13,7 +13,7 @@ stages:
 - stage: Build
   displayName: Build image
   jobs:
-  - job: Build
+  - job: CIPractise
     displayName: Build
     pool: 'Default'
     steps:
@@ -24,11 +24,13 @@ stages:
       displayName: 'Maven build'
     - task: DockerInstaller@0
       inputs:
-       dockerVersion: '26.0.2'
+       dockerVersion: '26.0.2-ce'
        
     - script: |
         sudo systemctl daemon-reload
+        sudo systemctl status docker
         sudo systemctl restart docker
+        sudo systemctl status docker
         sudo chmod 666 /var/run/docker.sock
        
     - script: |
