@@ -17,9 +17,7 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: 'Master'
-
+    pool: 'Default'
     steps:
 
     - script: |
