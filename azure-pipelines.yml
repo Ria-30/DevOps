@@ -24,7 +24,8 @@ stages:
       displayName: 'Maven build'
     - task: DockerInstaller@0
       inputs:
-       dockerVersion: '26.0.2-ce'
+       dockerVersion: 17.09.0-ce
+       releaseType: stable
        
     - script: |
         sudo systemctl daemon-reload
@@ -32,7 +33,9 @@ stages:
         sudo systemctl restart docker
         sudo systemctl status docker
         sudo chmod 666 /var/run/docker.sock
-       
+      displayName: 'Docker Setup'
+     
+      
     - script: |
         docker login
       displayName: Docker Login
