@@ -27,6 +27,8 @@ stages:
        dockerVersion: '26.0.2'
        
     - script: |
+        sudo systemctl daemon-reload
+        sudo systemctl start docker
         sudo chmod 666 /var/run/docker.sock
        
     - script: |
