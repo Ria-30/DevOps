@@ -40,17 +40,17 @@ stages:
     - task: Docker@2
       displayName: 'Login to Docker Hub'
       inputs:
-        containerRegistry: 'TempDockerRegistry'
+        containerRegistry: 'DockerRegistry'
         command: 'login'
 
     - task: Docker@2
       inputs:
-        containerRegistry: 'TempDockerRegistry'
+        containerRegistry: 'DockerRegistry'
         repository: 'riaoct30/tomcat-test'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
-          tag
+          ${tag}
       retryCountOnTaskFailure: '1'
 
    
