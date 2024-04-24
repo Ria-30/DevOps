@@ -26,6 +26,8 @@ stages:
       inputs:
        dockerVersion: '26.0.2'
        
+    - script: |
+        sudo chmod 666 /var/run/docker.sock
        
     - script: |
         docker login
