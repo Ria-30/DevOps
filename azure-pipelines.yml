@@ -36,14 +36,12 @@ stages:
       displayName: 'Docker Setup'
      
       
-    - script: |
-        docker login
-      displayName: Docker Login
-    # - task: Docker@2
-    #   displayName: 'Login to Docker Hub'
-    #   inputs:
-    #     containerRegistry: 'DockerRegistry'
-    #     command: 'login'
+
+    - task: Docker@2
+      displayName: 'Login to Docker Hub'
+      inputs:
+        containerRegistry: 'TempDockerRegistry'
+        command: 'login'
 
     - task: Docker@2
       inputs:
