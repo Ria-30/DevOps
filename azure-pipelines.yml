@@ -15,7 +15,9 @@ stages:
   jobs:
   - job: CIPractise
     displayName: Build
-    pool: 'Azure Pipelines'
+    pool:
+      vmImage: ubuntu-latest
+
     steps:
 
     - script: |
