@@ -16,7 +16,7 @@ stages:
   - job: CIPractise
     displayName: Build
     pool:
-      vmImage: ubuntu-latest
+      vmImage: windows-latest
 
     steps:
 
