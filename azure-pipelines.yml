@@ -15,7 +15,7 @@ stages:
   jobs:
   - job: CIPractise
     displayName: Build
-    pool: 'Default'
+    pool: 'Azure Pipelines'
     steps:
 
     - script: |
